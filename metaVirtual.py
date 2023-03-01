@@ -41,13 +41,11 @@ cap = cv2.VideoCapture(0)
 start = True
 
 while start:
-    img = cv2.imread('Screenshot (2).png')
-    cv2.imshow('Original Image',img)
-    # cv2.waitKey(0)
-    # if img is None:
-    #     print('Could not read image')
-    imageLine = img.copy()
-    cv2.resize(imageLine,(0, 0), fx = 0.1, fy = 0.1)
+    # img = cv2.imread('Screenshot (2).png')
+    # cv2.imshow('Original Image',img)
+   
+    # imageLine = img.copy()
+    # cv2.resize(imageLine,(0, 0), fx = 0.1, fy = 0.1)
     start, frame = cap.read()
 
     x, y, c = frame.shape
@@ -91,6 +89,7 @@ while start:
         center = fore_finger
         thumb = (landmarks[4][0],landmarks[4][1])
         cv2.circle(frame, center, 3, (0,255,0),-1)
+        # cv2.circle(paintWindow,center,3, (0,255,0),-1)
         print(center[1]-thumb[1])
         if (thumb[1]-center[1]<30):
             bpos.append(deque(maxlen=512))
@@ -124,7 +123,7 @@ while start:
                     colorIndex = 2 # Red
             elif 505 <= center[0] <= 600:
                     colorIndex = 3 # Yellow
-        elif center[0] <= 70:
+        elif center[0] <= 70:    #circle
                 if 40 <= center[0] <= 140:
                     cir_index = 1
                     blue_index = 0
@@ -163,19 +162,19 @@ while start:
                     continue
                 if cir_index == 1:
                     
-                    # cv2.circle(frame, (lmx, lmy), 40, (0,255,255), 2)
-                    # cv2.circle(paintWindow, (lmx, lmy), 40, (0,255,255), 2)
+                    cv2.circle(frame, (lmx, lmy), 40, (0,255,255), 2)
+                    cv2.circle(paintWindow, (lmx, lmy), 40, (0,255,255), 2)
                     # cv2.circle(imageLine, (lmx, lmy), 40, (0,255,255), 2)
-                    # cir_index = 0
+                    cir_index = 0
                     print("Circle")
                 cv2.line(frame, points[i][j][k - 1], points[i][j][k], colors[i], 2)
                 cv2.line(paintWindow, points[i][j][k - 1], points[i][j][k], colors[i], 2)
-                cv2.line(imageLine, points[i][j][k - 1], points[i][j][k], colors[i], 2)
+                # cv2.line(imageLine, points[i][j][k - 1], points[i][j][k], colors[i], 2)
                 
 
     cv2.imshow("Output", frame) 
     cv2.imshow("Paint", paintWindow)
-    cv2.imshow('Original Image',imageLine)
+    # cv2.imshow('Original Image',imageLine)
 
     if cv2.waitKey(1) == ord('q'):
         break
@@ -183,3 +182,12 @@ while start:
 
 cap.release()
 cv2.destroyAllWindows()
+# import statistics
+ 
+# # initializing list
+# li = [1, 2, 3, 3, 2, 2, 2, 1]
+ 
+# # using mean() to calculate average of list
+# # elements
+# print ("The average of list values is : ",end="")
+# print (statistics.mean(li))
