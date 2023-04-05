@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp</title>
+    <link rel="stylesheet" href="/static/signup.css" type="text/css">
+</head>
+
+<body>
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.4/firebase-app.js";
+        import { getDatabase, set,ref } from "https://www.gstatic.com/firebasejs/9.9.4/firebase-database.js";
+        import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.9.4/firebase-auth.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyDOZYdkG2_0ZX6S7c_9tSxVi6IfX4pMBFw",
+            authDomain: "divacode-92503.firebaseapp.com",
+            databaseURL: "https://divacode-92503-default-rtdb.firebaseio.com",
+            projectId: "divacode-92503",
+            storageBucket: "divacode-92503.appspot.com",
+            messagingSenderId: "245275576701",
+            appId: "1:245275576701:web:e979e282511facb837a414"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const database = getDatabase(app);
+        const auth = getAuth();
+        signup.addEventListener('click', (e) => {
+            e.preventDefault()
+            var username = document.getElementById('username').value;
+            var email = document.getElementById('email').value;
+            var password = document.getElementById('password').value;
+            createUserWithEmailAndPassword(auth, email, password)
+                .then((userCredential) => {
+                    // Signed in 
+                    const user = userCredential.user;
+                    set(ref(database,'users/'+user.uid),{
+                        username: username,
+                        email: email
+                    })
+                    alert('User successfully signed up!');
+                    // ...
+                })
+                .catch((error) => {
+                    const errorCode = error.code;
+                    const errorMessage = error.message;
+
+                    alert(errorMessage);
+                    // ..
+                });
+
+
+        })
+    </script>
+
+
+
+    <form>
+        <h1>Sign Up</h1>
+        <input type="text" id="username" placeholder="Username">
+        <input type="email" id = "email" placeholder="Email">
+        <input type="password" id="password"  placeholder="Password">
+        <!-- <input type="password"  idplaceholder="Confirm Password"> -->
+        <button  id="signup" >Sign Up</button>
+
+    </form>
+</body>
+
+</html>

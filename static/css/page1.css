@@ -1,0 +1,79 @@
+ h2{
+    margin-left: 1050px;
+    margin-top: -800px;
+    font-size: 40px;
+    font-style: Times;
+    
+}
+#img1{
+    margin-left: -8px;
+    margin-top: -8px;
+    size: initial;
+    
+}
+#USERNAME{
+    font-size: larger;
+    margin-left: 1014px;
+    border: none;
+    outline: none;
+}
+#PASSWORD{
+    font-size: larger;
+    margin-left: 1014px;
+    border: none;
+    outline: none;
+}
+#hr1{
+    width: 15rem;
+    margin-left: 1014px;
+}
+/* #hr2{
+    width:3rem;
+    margin-left:1081px;
+    color:blue; */
+
+.div2 {
+    /* padding-top: 0rem; */
+    padding-bottom: 25px;
+}
+/* .username{
+    margin-left: 1000px;
+    margin-top: 30px;
+    
+
+} */
+/* #img1{
+    margin-top:-589px;
+    margin-left:-8px ;
+    height: 729px;
+    width: 850px;
+
+} */
+#forgotpassword{
+    
+    margin-left: 1014px;
+    color: rgb(39,107,240);
+    font-weight: bolder;
+}
+button{
+    margin-left: 1047px;
+    height: 44px;
+    width: 120px;
+    font-size: 20px;
+    font-weight: 900;
+    background-color: rgb(165,18,18);
+    color: white;
+    border-radius: 50px;
+    border: none;
+    
+}
+.btnDiv{
+    padding-bottom: 2px;
+}
+#signup{
+    margin-left: 1080px;
+    margin-top: 140px;
+    color: rgb(39,107,240);
+    font-weight: bolder;
+}
+

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/meta.css">
+
+    <script src="https://kit.fontawesome.com/1487c02f83.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+
+    
+    <nav class="nav1">
+    <div class="meta">
+        <h1>META VIRTUAL</h1>
+    </div>
+    <div class="searchbar">
+        <label for="">
+            <!-- <div class="s">
+            <i class="fa-sharp fa-solid fa-magnifying-glass" id="searchicon"></i>
+            </div> -->
+
+
+
+            
+            <input type="text" placeholder="Search..." aria-label="search" id="searchar"  >
+
+        </label>
+    </div>
+    <div class="hi">
+
+
+        <i class="fa-solid fa-user" id="user"></i>
+    </div>
+
+
+
+         
+    <div>    
+        <h2>HELLO,USER</h2>
+    </div>
+    <div>
+        <a href="{{url_for('home')}}">  <button id="logout">Logout</button></a>
+      </div>
+    </nav>
+    <nav class="nav2">
+        <button>NEW</button><br>
+        <button id="b1">Default</button>
+        <div class="upgrade">
+            <div class="trim">
+            <input type="radio">
+            <label for="TRIM">TRIM</label></div><br>
+            <div class="cloud">
+            <input type="radio">
+            <label for="CLOUD STORAGE">CLOUD STORAGE</label></div><br>
+            <input type="radio">
+            <div class="SECURITY">
+            <label for="SECURITY">SECURITY</label><br>
+            <button id="B2">UPGRADE NOW</button>
+            </div>
+        </div>
+    </nav>
+    <section>
+       
+    <p class="recording">No Recordings in this file</p>
+    <form class="form-feature"method="post">
+        
+        <a class="btn btn-primary mr-1 featurebtn" href="{{url_for('fea1')}}">feature 1</a>
+        <a class="btn btn-primary mr-1 featurebtn" href="{{url_for('fea2')}}">Feature 2</a>
+    </form>
+    <div class="b3">
+    <button >EDIT</button>
+    <button id="b4">NEW RECORDING</button><br><br>
+        <p id="US">USED MEMORY 0%</p>
+    </div>
+    <div class="C1">
+        <button id="b5">
+            LOCAL
+        </button>
+        <BUTTON id="b6">
+            MY EYES
+        </BUTTON>
+        <i class="fa-solid fa-lock" id="LOCK"></i>
+    </div>
+    </section>
+</body>
+</html>

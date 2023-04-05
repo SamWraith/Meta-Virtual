@@ -1,0 +1,54 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    background:url('pic3.jpeg');
+    background-size: cover;
+
+}
+form{
+    margin-top: 45px;
+    text-align: center;
+    font: bold;
+    font-size: large;
+
+    color: white;
+}
+input{
+    display: block;
+    width: 350px;
+    height: 40px;
+    margin: 20px;
+    border:none;
+    outline:none;
+    font-size:20px;
+    border-bottom: 1px solid white;
+    background: transparent;
+    color: white;
+}
+button{
+    width: 350px;
+    height: 40px;
+    font-size: 20px;
+    background-color: rgb(165,18,18);
+    color:white;
+    border: none;
+    border-radius: 50px;
+    font-weight: 800;
+    margin-top: 20px;
+    
+}
+form h1{
+    margin-top: 100px;
+}
+::placeholder{
+    color: white;
+}
+
