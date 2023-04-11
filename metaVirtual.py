@@ -323,7 +323,7 @@ def signup():
      return render_template("signup.html")
 @app.route('/meta', methods = ['POST', 'GET'])
 def meta():
-     return render_template("meta.html")
+     return render_template("meta1.html")
 @app.route('/fea1')
 def fea1():
     Response(feature1())
@@ -332,7 +332,7 @@ def fea1():
 @app.route('/fea2')
 def fea2():
      Response(feature2())
-     return render_template('fea2.html')
+     return render_template('fea1.html')
 if __name__ == '__main__':
      app.run(debug = True)
     #  feature1()
