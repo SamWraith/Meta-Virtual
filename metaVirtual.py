@@ -333,6 +333,6 @@ def fea1():
 def fea2():
      Response(feature2())
      return render_template('fea1.html')
-# if __name__ == '__main__':
-#      app.run(debug = False, host = "0.0.0.0")
+if __name__ == '__main__':
+     app.run(debug = False, host = "0.0.0.0")
     #  feature1() 
