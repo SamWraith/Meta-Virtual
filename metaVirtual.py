@@ -219,37 +219,37 @@ def feature2():
     annotations = [[]]
     annotationNumber = -1
     annotationStart = False
-    hs, ws = int(140), int(250)  # width and height of small image
+    hs, ws = int(140), int(250)  
     
-    # Get list of presentation images
+
     pathImages = sorted(os.listdir(folderPath), key=len)
     print(pathImages)
     
     while True:
-        # Get image frame
+        
         success, img = cap.read()
         img = cv2.flip(img, 1)
         pathFullImage = os.path.join(folderPath, pathImages[imgNumber])
         imgCurrent = cv2.imread(pathFullImage)
     
-        # Find the hand and its landmarks
+        
         hands, img = detectorHand.findHands(img)  # with draw
-        # Draw Gesture Threshold line
+        
         cv2.line(img, (0, gestureThreshold), (width, gestureThreshold), (0, 255, 0), 10)
     
-        if hands and buttonPressed is False:  # If hand is detected
+        if hands and buttonPressed is False:  
     
             hand = hands[0]
             cx, cy = hand["center"]
-            lmList = hand["lmList"]  # List of 21 Landmark points
-            fingers = detectorHand.fingersUp(hand)  # List of which fingers are up
+            lmList = hand["lmList"]  
+            fingers = detectorHand.fingersUp(hand)  
     
-            # Constrain values for easier drawing
+            
             xVal = int(np.interp(lmList[8][0], [width // 2, width], [0, width]))
             yVal = int(np.interp(lmList[8][1], [150, height-150], [0, height]))
             indexFinger = xVal, yVal
     
-            if cy <= gestureThreshold:  # If hand is at the height of the face
+            if cy <= gestureThreshold:  
                 if fingers == [1, 0, 0, 0, 0]:
                     print("Left")
                     buttonPressed = True
@@ -334,5 +334,5 @@ def fea2():
      Response(feature2())
      return render_template('fea1.html')
 if __name__ == '__main__':
-     app.run(debug = True)
+     app.run(debug = False, host = "0.0.0.0")
     #  feature1() 
