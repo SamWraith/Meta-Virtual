@@ -1,2 +1,6 @@
 Flask
 Gunicorn
+opencv-python
+mediapipe
+numpy
+cvzone
