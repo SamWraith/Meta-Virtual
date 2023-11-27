@@ -38,6 +38,7 @@ def feature1():
     hands = mpHands.Hands(max_num_hands=1, min_detection_confidence=0.6, min_tracking_confidence = 0.6)
     mpDraw = mp.solutions.drawing_utils
 
+    
 
 
     cap = cv2.VideoCapture(0)
